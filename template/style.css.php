@@ -41,6 +41,7 @@ body { min-width:960px; }
 /* Title of the Blog */
 #blog-title     { left:90px; position:fixed; top:6px; max-width:237px; }
 #blog-title img { max-width:237px; }
+#blog-title { background-color:#FFF;opacity:0.7; }
 
 /* Generic classes to use in your child themes */
 .mapasdevista-background                    {background:<?php echo $bgColor; ?>;}

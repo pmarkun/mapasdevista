@@ -6,7 +6,15 @@
         
         <div class="content">
             <p class="metadata bottom">
-                <span class="date"><?php the_time( get_option('date_format') ); ?></span>
+                <span class="date">
+		<?php
+		  foreach((get_the_category()) as $childcat) {
+		    if (cat_is_ancestor_of(17, $childcat)) {
+		      echo $childcat->cat_name;
+		    }
+		  }
+		?>
+		</span>
             </p>
             <h1 class="bottom"><a class="js-link-to-post" id="balloon-post-link-<?php the_ID(); ?>" href="<?php the_permalink(); ?>" onClick="mapasdevista.linkToPost(this); return false;"><?php the_title(); ?></a></h1>
             <?php mapasdevista_get_template( 'mapasdevista-bubble', get_post_format() ); ?>
